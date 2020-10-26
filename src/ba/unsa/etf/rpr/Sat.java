@@ -10,30 +10,30 @@ public class Sat {
         this.minute=minute;
         this.sekunde=sekunde;
     }
-    void sljedeci() {
+    public void sljedeci() {
         sekunde++;
         if (sekunde == 60) { sekunde = 0; minute++; }
         if (minute == 60) { minute = 0; sati++; }
         if (sati == 24) sati = 0;
     }
-    void prethodni() {
+    public void prethodni() {
         sekunde--;
         if (sekunde == -1) { sekunde = 59; minute--; }
         if (minute == -1) { minute = 59; sati--; }
         if (sati == -1) sati = 23;
     }
 
-    void pomjeriZa(int pomak) {
+    public void pomjeriZa(int pomak) {
         if (pomak > 0) for (int i = 0; i < pomak; i++) sljedeci();
 		else for (int i = 0; i<-pomak; i++) prethodni();
     }
-    int dajSate(){
+    public int dajSate(){
         return sati;
     }
-    int dajMinute(){
+    public int dajMinute(){
         return minute;
     }
-    int dajSekunde(){
+    public int dajSekunde(){
         return sekunde;
     }
     void ispisi(){
